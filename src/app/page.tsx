@@ -1,3 +1,4 @@
+import Button from '@/components/button/Button'
 import Image from 'next/image'
 
 export default function Home() {
@@ -10,9 +11,7 @@ export default function Home() {
         <p className="text-[24px]">
           Turning your Idea into Reality. We bring together the teams from the global tech industry.
         </p>
-        <button className="pointer w-fit rounded-md text-sm p-3 border-none text-white bg-[#53C28A]">
-          See our Work
-        </button>
+        <Button text="See our Work" />
       </div>
       <div>
         <Image src="/hero.png" alt="Hero image" width={1000} height={1000} />
