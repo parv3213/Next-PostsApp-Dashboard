@@ -20,7 +20,7 @@ const Contact = (props: Props) => {
           <Input placeholder="name" type="text" />
           <Input placeholder="email" type="email" />
           <textarea
-            className="font-semibold outline-none border-2 border-[bbb] bg-transparent p-5 text-xl placeholder-current placeholder:opacity-60"
+            className="font-semibold outline-none border-2 border-[#bbb] bg-transparent p-5 text-xl placeholder-current placeholder:opacity-60"
             placeholder="message"
             rows={10}
           />

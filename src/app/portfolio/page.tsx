@@ -31,7 +31,7 @@ interface PortfolioCategoryProps {
 
 const PortfolioCategory = ({ href, src, alt, title }: PortfolioCategoryProps) => {
   return (
-    <div className="h-[400px] w-[300px] border-[5px] border-[#bbb] overflow-x-hidden hover:text-[#53C28A]">
+    <div className="h-[400px] w-[300px] border-[5px] border-[#bbb] overflow-x-hidden hover:text-[#53C28A] text-gray-300 dark:text-current">
       <Link href={href}>
         <div className="w-full h-full relative">
           <Image src={src} alt={alt} fill className="object-cover object-left" />
