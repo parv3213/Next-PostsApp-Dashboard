@@ -1,5 +1,6 @@
-import Button from '@/components/button/Button'
+import Button from '@/components/Button/Button.jsx'
 import Image from 'next/image.js'
+import Link from 'next/link.js'
 import { notFound } from 'next/navigation'
 import { items } from './data.js'
 
@@ -32,10 +33,15 @@ const Category = ({ params }: any) => {
               <div className="flex flex-col gap-3 max-w-[50%]">
                 <h3 className="text-4xl font-semibold">{topic.title}</h3>
                 <p className="text-xl text-medium">{topic.desc}</p>
-                <Button text="See more" url="/" />
+
+                <Link href={'/'}>
+                  <button className="pointer w-fit rounded-md text-sm p-3 border-none text-white bg-[#53C28A]">
+                    See more
+                  </button>
+                </Link>
               </div>
               <div className="relative h-[500px] w-full">
-                <Image src={topic.image} alt="topic" fill />
+                <Image src={topic.image} alt="topic" fill className="object-cover" />
               </div>
             </div>
           )
