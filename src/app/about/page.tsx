@@ -43,7 +43,7 @@ const About = (props: Props) => {
             <br />- Fast and Handy
             <br />- Mobile Apps
           </p>
-          <Button text="Contact" />
+          <Button text="Contact" url="/contact" />
         </div>
       </div>
     </div>

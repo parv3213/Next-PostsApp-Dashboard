@@ -11,10 +11,16 @@ export default function Home() {
         <p className="text-[24px]">
           Turning your Idea into Reality. We bring together the teams from the global tech industry.
         </p>
-        <Button text="See our Work" />
+        <Button url="/portfolio" text="See our Work" />
       </div>
       <div>
-        <Image src="/hero.png" alt="Hero image" width={1000} height={1000} />
+        <Image
+          src="/hero.png"
+          alt="Hero image"
+          width={1000}
+          height={1000}
+          className="animate-[moveHero_1s_ease_infinite_alternate] object-contain"
+        />
       </div>
     </div>
   )
