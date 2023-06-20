@@ -14,6 +14,14 @@ async function getData(id: string) {
   return res.json()
 }
 
+export async function generateMetadata({ params }: any) {
+  const post = await getData(params.id)
+  return {
+    title: post.title,
+    description: post.desc,
+  }
+}
+
 interface Props {
   params: {
     id: string
@@ -22,14 +30,14 @@ interface Props {
 
 const BlogPost = async ({ params }: Props) => {
   const id = params.id
-  const data = await getData(id)
+  const post = await getData(id)
 
   return (
     <div className="flex flex-col gap-10">
       <div className="flex flex-row gap-5 justify-between w-full">
         <div className="flex flex-col justify-between gap-5 flex-1">
-          <h1 className="font-bold text-[40px]">{data.title}</h1>
-          <p>{data.desc}</p>
+          <h1 className="font-bold text-[40px]">{post.title}</h1>
+          <p>{post.desc}</p>
           <div className="flex flex-row gap-3 items-center">
             <Image
               alt="author"
@@ -38,14 +46,14 @@ const BlogPost = async ({ params }: Props) => {
               height={25}
               className="object-cover rounded-full"
             />
-            <span>{data.username}</span>
+            <span>{post.username}</span>
           </div>
         </div>
         <div className="relative w-[50%] flex-1">
-          <Image fill src={data.img} alt="Post image" className="object-cover rounded-xl" />
+          <Image fill src={post.img} alt="Post image" className="object-cover rounded-xl" />
         </div>
       </div>
-      <p className="text-justify">{data.content}</p>
+      <p className="text-justify">{post.content}</p>
     </div>
   )
 }
