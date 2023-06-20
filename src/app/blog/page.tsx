@@ -15,6 +15,11 @@ async function getData() {
   return res.json()
 }
 
+export const metadata = {
+  title: 'Blogs',
+  description: 'This is the Lamadev blogs',
+}
+
 interface Props {}
 
 const Blog = async (props: Props) => {
