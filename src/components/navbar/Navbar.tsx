@@ -1,5 +1,6 @@
 'use client'
 
+import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
 import DarkModeToggle from '../DarkModeToggle/DarkModeToggle'
 
@@ -39,6 +40,8 @@ const links = [
 interface Props {}
 
 const Navbar = (props: Props) => {
+  const session = useSession()
+
   return (
     <div className="flex justify-between py-10">
       <Link href="/" className="font-bold text-xl">
@@ -54,7 +57,14 @@ const Navbar = (props: Props) => {
             </Link>
           ))}
         </ul>
-        <button className="text-sm rounded-md px-2 py-1 border-none text-white bg-[#53C28A]">Logout</button>
+        {session.status === 'authenticated' && (
+          <button
+            className="text-sm rounded-md px-2 py-1 border-none text-white bg-[#53C28A]"
+            onClick={() => signOut()}
+          >
+            Logout
+          </button>
+        )}
       </div>
     </div>
   )
