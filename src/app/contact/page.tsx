@@ -1,5 +1,6 @@
 import Button from '@/components/Button/Button'
 import Input from '@/components/Input/Input'
+import Textarea from '@/components/Input/Textarea'
 import Image from 'next/image'
 
 interface Props {}
@@ -19,11 +20,7 @@ const Contact = (props: Props) => {
         <form className="flex-1 flex gap-4 flex-col">
           <Input placeholder="name" type="text" />
           <Input placeholder="email" type="email" />
-          <textarea
-            className="font-semibold outline-none border-2 border-[#bbb] bg-transparent p-5 text-xl placeholder-current placeholder:opacity-60"
-            placeholder="message"
-            rows={10}
-          />
+          <Textarea placeholder="message" rows={10} />
           <Button text="Send" url="/" />
         </form>
       </div>

@@ -1,11 +1,15 @@
 'use client'
 import Button from '@/components/Button/Button'
 import Input from '@/components/Input/Input'
-import { signIn, signOut } from 'next-auth/react'
+import { signIn, signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 interface Props {}
 const Login = (props: Props) => {
+  const session = useSession()
+  const router = useRouter()
+
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault()
 
@@ -26,6 +30,12 @@ const Login = (props: Props) => {
       alert('There is some error')
     }
   }
+
+  if (session.status === 'loading') {
+    return <p className="text-center text-4xl text-bold animate-pulse">Loading...</p>
+  }
+
+  if (session.status === 'authenticated') router.push('/dashboard')
 
   return (
     <div className="flex flex-col items-center gap-5">

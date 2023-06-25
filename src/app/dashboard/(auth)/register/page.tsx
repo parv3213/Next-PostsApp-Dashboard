@@ -2,11 +2,13 @@
 
 import Button from '@/components/Button/Button'
 import Input from '@/components/Input/Input'
+import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
 interface Props {}
 const Register = (props: Props) => {
+  const session = useSession()
   const router = useRouter()
 
   const handleSubmit = async (e: React.SyntheticEvent) => {
