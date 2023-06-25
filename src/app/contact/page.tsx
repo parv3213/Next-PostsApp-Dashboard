@@ -7,7 +7,7 @@ interface Props {}
 const Contact = (props: Props) => {
   return (
     <div className="flex flex-col items-center justify-start gap-20">
-      <h1 className="font-bold text-[60px]">Let's Keep in Touch</h1>
+      <h1 className="font-bold text-[60px]">Let&apos;s Keep in Touch</h1>
       <div className="flex flex-row w-full justify-between gap-24 items-center">
         <div className="flex-1 h-[500px] relative">
           <Image

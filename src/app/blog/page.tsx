@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 async function getData() {
-  const res = await fetch('http://localhost:3000/api/posts', { cache: 'no-store' })
+  const res = await fetch(`${process.env.API_URL}/api/posts`, { cache: 'no-store' })
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
 

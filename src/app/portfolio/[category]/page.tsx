@@ -1,4 +1,3 @@
-import Button from '@/components/Button/Button.jsx'
 import Image from 'next/image.js'
 import Link from 'next/link.js'
 import { notFound } from 'next/navigation'
@@ -26,6 +25,7 @@ const Category = ({ params }: any) => {
         {data.map((topic, index) => {
           return (
             <div
+              key={data.id}
               className={`flex ${
                 index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
               } justify-between items-center gap-10 w-full`}
