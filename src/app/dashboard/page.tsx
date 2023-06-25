@@ -15,8 +15,6 @@ const Dashboard = (props: Props) => {
   const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
   const { data, mutate, error, isLoading } = useSWR(`/api/posts?username=${session?.data?.user?.name}`, fetcher)
-  console.log('isLoading', isLoading)
-  console.log('data-1', data)
 
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault()

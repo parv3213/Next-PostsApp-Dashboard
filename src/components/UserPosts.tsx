@@ -11,7 +11,7 @@ const UserPosts = ({ data, loading, handleDelete }: Props) => {
   }
 
   return (
-    <div className="flex-1">
+    <div className="flex-1 flex flex-col gap-5">
       {data &&
         data.map((post: any) => {
           return (

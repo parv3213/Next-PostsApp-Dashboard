@@ -34,8 +34,14 @@ const Blog = async (props: Props) => {
             key={item._id}
             className="flex flex-row justify-between gap-10 w-full pointer hover:scale-[1.02] transition duration-200"
           >
-            <div>
-              <Image src={'/websites.jpg'} alt="blog image" className="object-contain" width={400} height={400} />
+            <div className="">
+              <Image
+                src={item.img}
+                alt="blog image"
+                className="object-cover w-[200px] h-[200px]"
+                width={200}
+                height={200}
+              />
             </div>
             <div className="flex-1 flex flex-col gap-2">
               <h2 className="text-3xl font-semibold">{item.title}</h2>
